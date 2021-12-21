@@ -1,9 +1,9 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-   <div>
+  <div>
     <the-header></the-header>
-    <badge-list></badge-list>
+    <BadgeList />
     <user-info
       :full-name="activeUser.name"
       :info-text="activeUser.description"
@@ -14,22 +14,26 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
+import TheHeader from "./components/TheHeader.vue";
+import BadgeList from './components/BadgeList.vue';
+import UserInfo from './components/UserInfo.vue';
 
 export default {
-  // name: 'App',
+  components: {
+    "the-header": TheHeader, // HelloWorld
+    'BadgeList' : BadgeList,
+    UserInfo
+  },
   data() {
     return {
       activeUser: {
-        name: 'Maximilian Schwarzmüller',
-        description: 'Site owner and admin',
-        role: 'admin',
+        name: "Maximilian Schwarzmüller",
+        description: "Site owner and admin",
+        role: "admin",
       },
     };
   },
-  components: {
-    // HelloWorld
-  }
-}
+};
 </script>
 
 <style>
