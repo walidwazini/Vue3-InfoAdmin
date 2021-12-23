@@ -1,5 +1,8 @@
 <template>
   <div>
+    <header v-if="$slots.headerSlot" >
+      <slot name="headerSlot"></slot>
+    </header>
     <slot></slot>
   </div>
 </template>
@@ -7,10 +10,18 @@
 <script>
 export default {
   props: ["content"],
+  mounted(){
+      console.log(this.$slots.headerSlot)
+  }
 };
 </script>
 
 <style scoped >
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 div {
   margin: 2rem auto;
   max-width: 30rem;
