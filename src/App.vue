@@ -3,12 +3,14 @@
   <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <div>
     <the-header></the-header>
-    <button @click="setSelectedComponent('active-goals')" >Active Goals</button>
-    <button @click="setSelectedComponent('manage-goals')" >Manage Goals</button>
+    <button @click="setSelectedComponent('active-goals')">Active Goals</button>
+    <button @click="setSelectedComponent('manage-goals')">Manage Goals</button>
     <!-- <active-goals ></active-goals>
     <manage-goals></manage-goals> -->
-    <component :is="selectedComponents" ></component>
-    
+    <keep-alive>
+      <component :is="selectedComponents"></component>
+    </keep-alive>
+
     <!-- <BadgeList />
     <user-info
       :full-name="activeUser.name"
@@ -31,8 +33,8 @@ import TheHeader from "./components/TheHeader.vue";
 // import BadgeList from "./components/BadgeList.vue";
 // import UserInfo from "./components/UserInfo.vue";
 // import CourseGoals from "./components/CourseGoals.vue";
-import ActiveGoals from './components/ActiveGoals.vue'
-import ManageGoals from './components/ManageGoals.vue'
+import ActiveGoals from "./components/ActiveGoals.vue";
+import ManageGoals from "./components/ManageGoals.vue";
 
 export default {
   components: {
@@ -41,11 +43,11 @@ export default {
     // UserInfo,
     // CourseGoals,
     ActiveGoals,
-    ManageGoals
+    ManageGoals,
   },
   data() {
     return {
-      selectedComponents: 'active-goals',
+      selectedComponents: "active-goals",
       activeUser: {
         name: "Maximilian Schwarzmüller",
         description: "Site owner and admin",
@@ -54,10 +56,10 @@ export default {
     };
   },
   methods: {
-    setSelectedComponent(cmp){
-      this.selectedComponents = cmp
-    }
-  }
+    setSelectedComponent(cmp) {
+      this.selectedComponents = cmp;
+    },
+  },
 };
 </script>
 
