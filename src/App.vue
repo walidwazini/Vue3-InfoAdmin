@@ -10,20 +10,6 @@
     <keep-alive>
       <component :is="selectedComponents"></component>
     </keep-alive>
-
-    <!-- <BadgeList />
-    <user-info
-      :full-name="activeUser.name"
-      :info-text="activeUser.description"
-      :role="activeUser.role"
-    ></user-info>
-    <CourseGoals>
-      <template #default="slotProps" >
-        <h2> {{slotProps.item}} </h2>
-        <p> {{slotProps['another-prop']}} </p>
-      </template>
-    </CourseGoals> -->
-    <!-- also can like <course-goals/>  or -->
   </div>
 </template>
 
